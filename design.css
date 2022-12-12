@@ -1,0 +1,408 @@
+/********** SET-UP OF FONTS AND MARGIN-LIKE STUFF **********/
+
+html
+{
+  font-size:15px;
+  overflow-y: scroll;
+}
+
+html, body
+{
+  border:0px;
+  margin:0px;
+  padding:0px;
+}
+
+body
+{
+    font-family: Arial;
+    background-color: #09892C;                                  /*Ændret*/
+}
+
+body,ul,ol,p,th,td,tr,dl,h1,h2,h3,h4,div,small
+{  
+  font-family: sans-serif; 
+}                                                 
+
+h3 {
+    font-size: 15px;
+}
+
+pre,tt
+{  
+  font-family: monospace; 
+}
+
+/* Remove links underlining */
+a:link
+{
+  text-decoration: none;
+  color:blue;
+}
+
+a:visited
+{
+  text-decoration: none;
+  color:red;
+}
+
+/*a:hover
+{
+  color:red;
+}*/
+
+a:active
+{
+  text-decoration: underline;
+  color:red;
+}
+
+a[href]:hover { /* No underlining for only name attributes in news */
+    text-decoration: underline;
+}
+
+/* Page headline */
+#page-headline{
+    font-variant: small-caps;
+    font-size: 30px;
+    font-weight: bold;
+/*    text-align: center; */
+    padding-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+
+/********** HEADER, FOOTER, AND BANNER/LOGO **********/
+
+/* Top banner on every page */
+#logo
+{
+/*min-width:100%;
+max-width:200px;
+height:auto;
+padding:0px;
+margin:0px;*/
+    width:200px;
+    max-width:100%;
+padding-right:10px;
+padding-top:10px;
+}
+
+#undecorated{
+    text-decoration: none;
+    color: black;
+}
+
+#coursetitle{
+    font-size:30px;                                     /*Ændret*/
+    font-weight: bold;
+}
+
+
+/********** MAIN AND CONTENT **********/
+
+/* The entire page */
+#main
+{
+  max-width:810px;                                       /*Ændret*/
+  margin:auto;
+  padding:0px;
+  border-style:none solid solid solid;
+  border-width:1px;
+  border-color:black;
+  background-color:#ffffff;
+}
+
+@media screen and (min-width: 800px)
+{
+  #main
+  {
+    box-shadow: 1px 2px 5px 4px rgba(0,0,0,.2);
+    margin-top:5px;
+    margin-bottom:5px;
+    border-style:solid;
+  }
+}
+
+/* The content below the top banner */
+#content
+{
+  padding:10px;
+}
+
+
+/********** IMAGES **********/
+
+/* Always good? */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Removing IE's image link border */
+a img
+{
+  border:0px;
+}
+
+/* Border around images */
+.image-border {
+    padding:1px;
+    border:1px solid #021a40;
+    background-color:white;
+}
+
+
+/********** TOOL TIP **********/
+
+/* Pop-up */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+/*    max-width: 300px;*/
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+/*    left: 50%; */
+/*    margin-left: -50px; */
+/*    margin-right: 300px; */
+
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity .33s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/********** DECORATIVE ELEMENTS AND STYLING **********/
+
+/* My rule */
+#myrule {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+
+/********** FRONT PAGE NEWS **********/
+
+/* Fixing overflow of pictures in news */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#news_entry
+{ 
+    border: 0px solid;
+/*    border-radius: 20px; */
+    background-color:rgb(233,233,233);
+    padding-top:10px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:1px;
+    margin-top:20px;
+}
+
+#news_headline_table
+{ 
+    border: 0px solid;
+/*    border-radius: 20px; */
+    background-color:rgb(212,212,212);
+    padding-left:5px;
+    padding-right:5px;
+    width:100%
+}
+
+#news_headline
+{ 
+  font-size:16px;
+}
+
+#news_date
+{ 
+  font-size:10px;
+  text-align: right;
+}
+
+#news_entry_text
+{ 
+  margin-left:5px;
+  margin-top:10px;
+  margin-bottom:0px;
+  padding-bottom:0px;
+}
+
+/* Enlarge picture on hover */
+.news-thumb {
+    transition: transform .2s; /* Animation */
+    display: inline-block;
+    padding: 1px;
+    border: 1px solid #021a40;
+    background-color: white;
+    transform-origin: 100% 50%;
+    float:right;
+    margin-left:10px;
+    margin-bottom:10px;
+}
+
+@media screen and (min-width: 800px) {
+.news-thumb:hover {
+    -ms-transform: scale(3); /* IE 9 */
+    -webkit-transform: scale(3); /* Safari 3-8 */
+    transform: scale(3);
+}
+}
+
+
+/********** MENU - from Responsive Topnav with Dropdown **********/
+
+.topnav {
+  overflow: hidden;
+  background-color: #09892C;                            /*Ændret*/
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 15px;    
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: #09892C;                          /*Ændret*/
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ddd;  /* #f9f9f9; */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: #09892C;                                           /*Ændret*/
+}
+
+.dropdown-content a:hover {
+    background-color: #bbb; /* #ddd; */
+    color: black;
+}
+
+/* Don't hover on small (probably touch) screens */
+@media screen and (min-width: 801px) {
+   .dropdown:hover .dropdown-content {
+       display: block;
+   }
+}
+
+@media screen and (max-width: 800px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  #coursetitle {
+    font-size:14px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* For the clickable menu for small screens */
+.show {
+    display: block;
+}
+
+.lenestyletable {
+    margin-top: 2em;
+    margin-bottom: 2em;
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul.space {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.5em;
+  margin-top: 0.2em;
+  margin-bottom: 0;
+}
+ul li {
+  margin-bottom: 0.1em;
+}
+ul li.space {
+  margin: 1em;
+  margin-bottom: 0.1em;
+}
+}
